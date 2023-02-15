@@ -9,6 +9,8 @@ fun main(){
     val lastName = "jo"
     println("My name is ${name + lastName}  I`m 32")
     println("this is 2\$") // 달러 표시를 쓰고 싶을 경우 백슬레시 사용
+
+    forAndWhile();
 }
 //1.함수
 
@@ -88,5 +90,36 @@ fun array(){
     arrayList.add(10)
     arrayList.add(20)
 
+}
+
+//6. for / while
+fun forAndWhile(){
+    val student = arrayListOf("jossi", "james", "jenny", "jennifer")
+    for((index,name) in student.withIndex()){
+        println("${index+1}번째 학생 : ${name}")
+    }
+//    for (name in student){
+//        println("name : ${name}")
+//    }
+//        var sum = 0
+//    for(i in 1..10){
+//        sum+= i
+//        println("${sum}")
+//    }
+//    sum = 0
+//    for(i in 1..10 step 2){
+//        sum+= i
+//        println("${sum}")
+//    }
+//    sum=0
+//    for(i in 10 downTo 1){
+//        sum+= i
+//        println("${sum}")
+//    }
+    var index=0
+    while(index<10){
+        println("current index : ${index}")
+        index++
+    }
 }
 
