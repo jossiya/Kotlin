@@ -69,3 +69,24 @@ fun checkNum(score : Int) : Unit{
 // Expression vs Statement
 // Expression 뭘 만들어서 값을 반환하는 것
 // Statement 어떤 것을 명령을 하라고 지시하는 문장 같은 것
+
+//5. Array and List
+//Array 컴파일 시 메모리 할당 되는 정적 메모리 할당이며, stack 연속된 메모리 공간
+//List 1. List : 수정 불가능 2. MutableList : 수정 가능  런타임시 메모리 할당 동적 할당, Heap , 메모리 상에 떨어져 있는 데이터들이 앞의 뒤
+
+fun array(){
+    val array = arrayOf(1,2,3);
+    val list = listOf(1,2,3)
+
+    val array2 = arrayOf(1,"d",3.4f)
+    val list2 = listOf(1,"d",11L)
+
+    array[0]=3
+//    list[0]=3 안됌
+    var result = list.get(0);
+    var arrayList= arrayListOf<Int>()
+    arrayList.add(10)
+    arrayList.add(20)
+
+}
+
