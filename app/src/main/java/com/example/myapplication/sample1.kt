@@ -11,6 +11,7 @@ fun main(){
     println("this is 2\$") // 달러 표시를 쓰고 싶을 경우 백슬레시 사용
 
     forAndWhile();
+    nullCheck()
 }
 //1.함수
 
@@ -120,6 +121,31 @@ fun forAndWhile(){
     while(index<10){
         println("current index : ${index}")
         index++
+    }
+}
+//7. Nullable / NonNull 자바에서 런타임 이셉션을 컴파일에서 잡을 수 있음
+fun nullCheck(){
+    var name : String = "jossi"
+    var nullName: String?=null //null 타입 사용시 ? 사용
+    var nameUpperCase = name.uppercase()
+    var nullNameUpperCase = nullName?.uppercase()// null 이 아니면 작동 아니면 null 반환
+
+    // ?:
+    val lastName : String?=null
+    val fullName = name+" "+ (lastName?:"No lastName") //엘비스 연산자 눌이면 설정한 값 출력
+    println(fullName)
+
+    //!! 이거 절대로 눌일리 없다는 뜻
+
+}
+
+fun ignoreNulls(str : String?){
+    val mNotNull : String = str!!//눌이 아니라고 명시 눌이 확실히 아닐 때만 사용
+    val upper = mNotNull.uppercase()//에러 안뜸
+
+    val email :String?= "jossi@nana.com"
+    email?.let{//이메일이 눌이 아니면 실행해라 , 눌이 아니라면 람다식 내부로 이동; 안에 로직 실행 email or it 사용 가능
+        println("My email is ${it}")
     }
 }
 
