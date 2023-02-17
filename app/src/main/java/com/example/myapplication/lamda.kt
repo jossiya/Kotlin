@@ -18,4 +18,19 @@ val nameAge ={name : String, age : Int ->
 fun main(){
     println(square(12))
     println(nameAge("jossi", 32))
+    val a = "jossi said "
+    val b = "simssi said "
+    println(a.pizzaIsGreat())
+    println(b.pizzaIsGreat())
+    println(extendString("jossi",32))
+}
+
+//확장함수
+val pizzaIsGreat : String.() -> String = {
+    this + "Pizza is the best!"
+}
+
+fun extendString(name : String, age : Int) : String{
+    val introduceMyself : String.(Int) ->String={"I am ${this} and ${it} years old"}
+    return  name.introduceMyself(age)
 }
