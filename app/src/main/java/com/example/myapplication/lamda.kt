@@ -25,6 +25,14 @@ fun main(){
     println(extendString("jossi",32))
     println(calculateGrade(98))
     println(calculateGrade(984))
+
+
+   val lamda = {number : Double->
+       number==4.3213
+   }
+    println(invakeLamda(lamda))
+    println(invakeLamda({it > 3.22}))
+    invakeLamda{it > 3.22}
 }
 
 //확장함수
@@ -45,4 +53,8 @@ val calculateGrade : (Int) -> String = {
         in 71..100 -> "perfect"
         else ->"Error"
     }
+}
+//람다를 표현하는 여러가지 방법
+fun invakeLamda(lamda : (Double)->Boolean) : Boolean{
+    return lamda(5.2343)
 }
