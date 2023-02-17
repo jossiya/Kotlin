@@ -23,6 +23,8 @@ fun main(){
     println(a.pizzaIsGreat())
     println(b.pizzaIsGreat())
     println(extendString("jossi",32))
+    println(calculateGrade(98))
+    println(calculateGrade(984))
 }
 
 //확장함수
@@ -33,4 +35,14 @@ val pizzaIsGreat : String.() -> String = {
 fun extendString(name : String, age : Int) : String{
     val introduceMyself : String.(Int) ->String={"I am ${this} and ${it} years old"}
     return  name.introduceMyself(age)
+}
+
+//람다의 Return
+val calculateGrade : (Int) -> String = {
+    when(it){
+        in 0..40 -> "fail"
+        in 41..70 -> "pass"
+        in 71..100 -> "perfect"
+        else ->"Error"
+    }
 }
