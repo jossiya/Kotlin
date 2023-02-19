@@ -9,6 +9,7 @@ class Book private constructor(val id :Int, val name : String){
         }
     }
 }
+//Companion class
 //Companion 자바의 스테틱 역활
 interface  IdProvider{
     fun getId() : Int
